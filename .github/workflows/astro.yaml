@@ -16,17 +16,18 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 8 # o la versión específica que necesites
       - name: Install, build, and upload your site
         uses: withastro/action@v2
         with:
-          # Opcional: descomenta y ajusta estos según necesites
-          # path: .
-          # node-version: 20
-          # package-manager: pnpm@latest
+          package-manager: pnpm@latest
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: ./dist  # Asegúrate que esto coincide con tu directorio de output de Astro
+          path: ./dist
 
   deploy:
     needs: build
