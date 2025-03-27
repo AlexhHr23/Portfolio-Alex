@@ -1,9 +1,9 @@
 ---
-import GitHub from "./icons/GitHub.astro"
-import NextJS from "./icons/NextJS.astro"
-import Tailwind from "./icons/Tailwind.astro"
-import Link from "./icons/Link.astro"
-import LinkButton from "./LinkButton.astro"
+import GitHub from "./icons/GitHub.astro";
+import NextJS from "./icons/NextJS.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import Link from "./icons/Link.astro";
+import LinkButton from "./LinkButton.astro";
 
 const TAGS = {
   JAVASCRIPT: {
@@ -11,7 +11,7 @@ const TAGS = {
     class: "bg-[#F7DF1E] text-black",
     // icon: JavaScript,
   },
-  PYTHON : {
+  PYTHON: {
     name: "Python",
     class: "bg-[#3776AB] text-white",
     // icon: Python,
@@ -50,7 +50,7 @@ const TAGS = {
     class: "bg-[#CC6699] text-white",
     // icon: Sass,
   },
-}
+};
 const PROJECTS = [
   {
     title: "FortiBank",
@@ -58,81 +58,104 @@ const PROJECTS = [
       "Diseñé e implementé arquitectura monolítica en Django para gestión de puntos/recompensas, asegurando estabilidad y escalabilidad.Desarrollé módulos clave para administración/transferencia de puntos, garantizando seguridad y fluidez.Implementé CI/CD para optimizar entregas, reduciendo errores y tiempos de despliegue.Automaticé despliegue en VM (Hostinger) con Nginx/Gunicorn para producción eficiente.Creé dashboard administrativo (Jazmin) para monitoreo en tiempo real, mejorando visibilidad.Lideré optimización de rendimiento con mejoras en BD y consultas.",
     link: "https://forti-bank.com",
     image: "/Portfolio-Alex/projects/fortibank.webp",
-    tags: [TAGS.DJANGO, TAGS.NGINX, TAGS.BOOSTRAP, TAGS.PYTHON, TAGS.JAVASCRIPT],
-  },{
+    tags: [
+      TAGS.DJANGO,
+      TAGS.NGINX,
+      TAGS.BOOSTRAP,
+      TAGS.PYTHON,
+      TAGS.JAVASCRIPT,
+    ],
+  },
+  {
     title: "Fireclub Marketers",
     description:
       "Plataforma para marketers enfocada en la verificación de redes de mercadeo, gestión de invitaciones para nuevos marketers y compradores, y administración de comisiones a través del sistema. Optimiza la interacción entre usuarios y facilita el seguimiento del rendimiento en la red.",
-    link: "https://www.myfireclub.com",
+    link: "https://prereg.fireclub.dev",
     // github: "https://github.com/pheralb/svgl",
     image: "/Portfolio-Alex/projects/mkt.webp",
     tags: [TAGS.SVELTE, TAGS.BOOSTRAP, TAGS.SASS, TAGS.JAVASCRIPT],
   },
   {
     title: "Fireclub Marketplace",
-    description:"Plataforma de comercio electrónico que conecta vendedores y compradores, permitiendo la gestión de productos, compras y pagos. Incluye integración con un sistema de comisiones para marketers y soporte para dispositivos web y móviles, optimizando la experiencia del usuario.",
+    description:
+      "Plataforma de comercio electrónico que conecta vendedores y compradores, permitiendo la gestión de productos, compras y pagos. Incluye integración con un sistema de comisiones para marketers y soporte para dispositivos web y móviles, optimizando la experiencia del usuario.",
     link: "https://www.fireclub.mx",
     image: "/Portfolio-Alex/projects/marketplace.webp",
     tags: [TAGS.SVELTE, TAGS.BOOSTRAP, TAGS.SASS, TAGS.JAVASCRIPT],
-  }, 
+  },
   {
     title: "Fireclub Admin",
-    description:"Plataforma administrativa integral para la gestión de Fireclub, que permite la creación y administración de productos, marcas, banners, categorías, usuarios, comisiones y transacciones. Ofrece un control completo del marketplace y la red de marketers, optimizando la operación y el monitoreo del sistema.",
+    description:
+      "Plataforma administrativa integral para la gestión de Fireclub, que permite la creación y administración de productos, marcas, banners, categorías, usuarios, comisiones y transacciones. Ofrece un control completo del marketplace y la red de marketers, optimizando la operación y el monitoreo del sistema.",
     link: "https://admin.fireclub.mx",
     image: "/Portfolio-Alex/projects/admin.webp",
     tags: [TAGS.SVELTE, TAGS.BOOSTRAP, TAGS.SASS, TAGS.JAVASCRIPT],
   },
   {
+    title: "Fireclub Landing",
+    description:
+      "Plataforma de preregistro para empresas y comercios interesados en unirse a Fireclub como proveedores. Permite el registro inicial de información básica del negocio para una posterior validación e invitación formal al marketplace. Sirve como primer punto de contacto entre Fireclub y potenciales proveedores.",
+    link: "https://prereg.fireclub.dev",
+    image: "/Portfolio-Alex/projects/landing.webp",
+    tags: [TAGS.SVELTE, TAGS.BOOSTRAP, TAGS.SASS, TAGS.JAVASCRIPT],
+  },
+  {
     title: "Fireclub Marketplace-Móvil (En desarrollo)",
-    description:"Aplicación móvil del Marketplace de Fireclub, diseñada en Flutter, que permite a los usuarios explorar productos, realizar compras y gestionar pedidos de forma intuitiva. Integrada con el sistema de comisiones para marketers, optimiza la experiencia de compra en dispositivos móviles.",
+    description:
+      "Aplicación móvil del Marketplace de Fireclub, diseñada en Flutter, que permite a los usuarios explorar productos, realizar compras y gestionar pedidos de forma intuitiva. Integrada con el sistema de comisiones para marketers, optimiza la experiencia de compra en dispositivos móviles.",
     // link: "https://adventjs.dev",
     image: "/Portfolio-Alex/projects/movil.webp",
     tags: [TAGS.FLUTTER, TAGS.RIVERPOD],
   },
-]
+];
 ---
 
 <div class="flex flex-col gap-y-16">
-  {PROJECTS.map(({ image, title, description, tags, link }) => (
-    <article class="flex flex-col md:flex-row bg-gray-900 p-6 rounded-xl shadow-lg border border-gray-800 transition hover:shadow-2xl hover:border-gray-700">
-      <div class="w-full md:w-1/2">
-        <div class="relative overflow-hidden rounded-lg shadow-md transition duration-500 hover:scale-105">
-          <img alt={title} class="object-cover w-full h-56 sm:h-full" loading="lazy" src={image} />
+  {
+    PROJECTS.map(({ image, title, description, tags, link }) => (
+      <article class="flex flex-col md:flex-row bg-gray-900 p-6 rounded-xl shadow-lg border border-gray-800 transition hover:shadow-2xl hover:border-gray-700">
+        <div class="w-full md:w-1/2">
+          <div class="relative overflow-hidden rounded-lg shadow-md transition duration-500 hover:scale-105">
+            <img
+              alt={title}
+              class="object-cover w-full h-56 sm:h-full"
+              loading="lazy"
+              src={image}
+            />
+          </div>
         </div>
-      </div>
 
-      <div class="w-full md:w-1/2 md:max-w-lg p-4">
-        <h3 class="text-2xl font-semibold text-gray-100 mb-2">
-          {title}
-        </h3>
-        <p class="text-gray-400 text-sm leading-relaxed">
-          {description}
-        </p>
+        <div class="w-full md:w-1/2 md:max-w-lg p-4">
+          <h3 class="text-2xl font-semibold text-gray-100 mb-2">{title}</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">{description}</p>
 
-        <ul class="flex flex-wrap mt-4 gap-2">
-          {tags.map((tag) => (
-            <li>
-              <span class={`inline-flex items-center gap-1 text-xs font-medium ${tag.class} py-1 px-3 rounded-full`}>
-                {tag.name}
-              </span>
-            </li>
-          ))}
-        </ul>
+          <ul class="flex flex-wrap mt-4 gap-2">
+            {tags.map((tag) => (
+              <li>
+                <span
+                  class={`inline-flex items-center gap-1 text-xs font-medium ${tag.class} py-1 px-3 rounded-full`}
+                >
+                  {tag.name}
+                </span>
+              </li>
+            ))}
+          </ul>
 
-        {link && (
-  <div class="mt-4">
-    <a 
-      href={link} 
-      target="_blank" 
-      rel="noopener noreferrer"
-      class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium py-2 px-4 rounded-lg transition"
-    >
-      <Link class="size-4" />
-      Preview
-    </a>
-  </div>
-)}
-      </div>
-    </article>
-  ))}
+          {link && (
+            <div class="mt-4">
+              <a
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium py-2 px-4 rounded-lg transition"
+              >
+                <Link class="size-4" />
+                Preview
+              </a>
+            </div>
+          )}
+        </div>
+      </article>
+    ))
+  }
 </div>
