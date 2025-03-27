@@ -1,30 +1,33 @@
 ---
 import ExperienceItem from "./ExperienceItem.astro"
 const EXPERIENCE = [
-  {
-    date: "Actualmente...",
-    title: "Creador de Contenido",
-    company: "Twitch",
-    description:
-      "Divulgo sobre programación y desarrollo web en diferentes plataformas. Galardonado como mejor creador de contenido de habla no-inglesa en 2022 y mejor comunidad en 2023 por GitHub.",
-    link: "https://twitch.tv/midudev",
-  },
-  {
-    date: "Septiembre 2022",
-    title: "Principal Frontend Engineer",
-    company: "Adevinta Spain",
+{
+    date: "Enero 2022 - Junio 2022",
+    title: "Full Stack developer",
+    company: "AB Forti corporativo",
     description:
       "Responsable de la plataforma, componentes y utilidades para la creación y desarrollo de aplicaciones web. Mejora de un 30% en la entrega de software. Implantación de medidas de integración continua y despliegue con A/B testing en más de 15 equipos.",
   },
+  {
+    date: "Julio 2022 - actualmente",
+    title: "Front end developer",
+    company: "Fireclub",
+    description:"Desarrollé el frontend de tres plataformas web con Svelte y SvelteKit, mejorando velocidad y experiencia de usuario. Implementé la integración de APIs para sincronización en tiempo real. Diseñé interfaces móviles en Flutter para el Marketplace. Optimicé el rendimiento y escalabilidad de las plataformas.",
+    // link: "https://twitch.tv/midudev",
+  },
+
 ]
 ---
 
-<ol class="relative mt-16">
-  {
-    EXPERIENCE.map((experience) => (
-      <li class="">
+<ol class="relative border-l-4 border-blue-500 dark:border-blue-400 mt-10 ml-6">
+  {EXPERIENCE.map((experience, index) => (
+    <li class="mb-10 ml-6 relative animate-fade-in">
+      {/* <span class="absolute -left-4 w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-500 dark:from-blue-400 dark:to-purple-400 border-4 border-white dark:border-gray-900 rounded-full shadow-md"></span> */}
+      
+      {/* Contenido con animaciones y hover */}
+      <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
         <ExperienceItem {...experience} />
-      </li>
-    ))
-  }
+      </div>
+    </li>
+  ))}
 </ol>

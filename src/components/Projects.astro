@@ -6,88 +6,133 @@ import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
 
 const TAGS = {
-  NEXT: {
-    name: "Next.js",
-    class: "bg-black text-white",
-    icon: NextJS,
+  JAVASCRIPT: {
+    name: "JavaScript",
+    class: "bg-[#F7DF1E] text-black",
+    // icon: JavaScript,
   },
-  TAILWIND: {
-    name: "Tailwind CSS",
-    class: "bg-[#003159] text-white",
-    icon: Tailwind,
+  PYTHON : {
+    name: "Python",
+    class: "bg-[#3776AB] text-white",
+    // icon: Python,
+  },
+  DJANGO: {
+    name: "Django",
+    class: "bg-[#009639] text-white",
+    // icon: Flutter,
+  },
+  BOOSTRAP: {
+    name: "Boostrap",
+    class: "bg-[#0d6efd] text-white",
+  },
+  NGINX: {
+    name: "Nginx",
+    class: "bg-[#009639] text-white",
+    // icon: Flutter,
+  },
+  SVELTE: {
+    name: "Svelte",
+    class: "bg-[#FF3E00] text-white",
+    // icon: NextJS,
+  },
+  FLUTTER: {
+    name: "Flutter",
+    class: "bg-[#02569B] text-white",
+    // icon: Flutter,
+  },
+  RIVERPOD: {
+    name: "Riverpod",
+    class: "bg-[#02569B] text-white",
+    // icon: Flutter,
+  },
+  SASS: {
+    name: "Sass",
+    class: "bg-[#CC6699] text-white",
+    // icon: Sass,
   },
 }
 const PROJECTS = [
   {
-    title: "SVGL - A beautiful library with SVG logos",
+    title: "FortiBank",
     description:
-      "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://svgl.vercel.app/",
-    github: "https://github.com/pheralb/svgl",
-    image: "/projects/svgl.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "Diseñé e implementé arquitectura monolítica en Django para gestión de puntos/recompensas, asegurando estabilidad y escalabilidad.Desarrollé módulos clave para administración/transferencia de puntos, garantizando seguridad y fluidez.Implementé CI/CD para optimizar entregas, reduciendo errores y tiempos de despliegue.Automaticé despliegue en VM (Hostinger) con Nginx/Gunicorn para producción eficiente.Creé dashboard administrativo (Jazmin) para monitoreo en tiempo real, mejorando visibilidad.Lideré optimización de rendimiento con mejoras en BD y consultas.",
+    link: "https://forti-bank.com",
+    image: "/projects/fortibank.webp",
+    tags: [TAGS.DJANGO, TAGS.NGINX, TAGS.BOOSTRAP, TAGS.PYTHON, TAGS.JAVASCRIPT],
+  },{
+    title: "Fireclub Marketers",
+    description:
+      "Plataforma para marketers enfocada en la verificación de redes de mercadeo, gestión de invitaciones para nuevos marketers y compradores, y administración de comisiones a través del sistema. Optimiza la interacción entre usuarios y facilita el seguimiento del rendimiento en la red.",
+    link: "https://www.myfireclub.com",
+    // github: "https://github.com/pheralb/svgl",
+    image: "/projects/mkt.webp",
+    tags: [TAGS.SVELTE, TAGS.BOOSTRAP, TAGS.SASS, TAGS.JAVASCRIPT],
   },
   {
-    title: "AdventJS - Retos de programación con JavaScript y TypeScript",
-    description:
-      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://adventjs.dev",
-    image: "/projects/adventjs.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+    title: "Fireclub Marketplace",
+    description:"Plataforma de comercio electrónico que conecta vendedores y compradores, permitiendo la gestión de productos, compras y pagos. Incluye integración con un sistema de comisiones para marketers y soporte para dispositivos web y móviles, optimizando la experiencia del usuario.",
+    link: "https://www.fireclub.mx",
+    image: "/projects/marketplace.webp",
+    tags: [TAGS.SVELTE, TAGS.BOOSTRAP, TAGS.SASS, TAGS.JAVASCRIPT],
+  }, 
+  {
+    title: "Fireclub Admin",
+    description:"Plataforma administrativa integral para la gestión de Fireclub, que permite la creación y administración de productos, marcas, banners, categorías, usuarios, comisiones y transacciones. Ofrece un control completo del marketplace y la red de marketers, optimizando la operación y el monitoreo del sistema.",
+    link: "https://admin.fireclub.mx",
+    image: "/projects/admin.webp",
+    tags: [TAGS.SVELTE, TAGS.BOOSTRAP, TAGS.SASS, TAGS.JAVASCRIPT],
+  },
+  {
+    title: "Fireclub Marketplace-Móvil (En desarrollo)",
+    description:"Aplicación móvil del Marketplace de Fireclub, diseñada en Flutter, que permite a los usuarios explorar productos, realizar compras y gestionar pedidos de forma intuitiva. Integrada con el sistema de comisiones para marketers, optimiza la experiencia de compra en dispositivos móviles.",
+    // link: "https://adventjs.dev",
+    image: "/projects/movil.webp",
+    tags: [TAGS.FLUTTER, TAGS.RIVERPOD],
   },
 ]
 ---
 
 <div class="flex flex-col gap-y-16">
-  {
-    PROJECTS.map(({ image, title, description, tags, link, github }) => (
-    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-  <div class="w-full md:w-1/2">
-    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-      <img alt="Recién llegado vs 5 años en Nueva Zelanda" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
-    </div>
-  </div>
+  {PROJECTS.map(({ image, title, description, tags, link }) => (
+    <article class="flex flex-col md:flex-row bg-gray-900 p-6 rounded-xl shadow-lg border border-gray-800 transition hover:shadow-2xl hover:border-gray-700">
+      <div class="w-full md:w-1/2">
+        <div class="relative overflow-hidden rounded-lg shadow-md transition duration-500 hover:scale-105">
+          <img alt={title} class="object-cover w-full h-56 sm:h-full" loading="lazy" src={image} />
+        </div>
+      </div>
 
-  <div class="w-full md:w-1/2 md:max-w-lg">
-    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-      {title}
-    </h3>
-    <div class="flex flex-wrap mt-2">
-      <ul class="flex flex-row mb-2 gap-x-2">
+      <div class="w-full md:w-1/2 md:max-w-lg p-4">
+        <h3 class="text-2xl font-semibold text-gray-100 mb-2">
+          {title}
+        </h3>
+        <p class="text-gray-400 text-sm leading-relaxed">
+          {description}
+        </p>
+
+        <ul class="flex flex-wrap mt-4 gap-2">
           {tags.map((tag) => (
             <li>
-              <span
-                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
-              >
-                <tag.icon class="size-4" />
+              <span class={`inline-flex items-center gap-1 text-xs font-medium ${tag.class} py-1 px-3 rounded-full`}>
                 {tag.name}
               </span>
             </li>
           ))}
         </ul>
 
-      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
-      <footer class="flex items-end justify-start mt-4 gap-x-4">
-          {github && (
-            <LinkButton href={github}>
-              <GitHub class="size-6" />
-              Code
-              
-            </LinkButton>
-          )}
-          {link && (
-            <LinkButton href={link}>
-              <Link class="size-4" />
-              Preview
-            </LinkButton>
-          )}
-        </footer>
-    </div>
+        {link && (
+  <div class="mt-4">
+    <a 
+      href={link} 
+      target="_blank" 
+      rel="noopener noreferrer"
+      class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium py-2 px-4 rounded-lg transition"
+    >
+      <Link class="size-4" />
+      Preview
+    </a>
   </div>
-</article>
-    ))
-  }
+)}
+      </div>
+    </article>
+  ))}
 </div>
-
-
-
